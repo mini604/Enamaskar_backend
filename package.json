@@ -1,16 +1,14 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
+    "start": "node index.js",
+    "worker": "node server/worker.js",
     "dev": "nodemon index.js",
     "worker:dev": "nodemon server/worker.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "@remotion/bundler": "^4.0.379",
     "@remotion/renderer": "^4.0.379",
@@ -18,10 +16,10 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
-    "ioredis": "^5.8.2",
-    "nodemon": "^3.1.11"
+    "ioredis": "^5.8.2"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "nodemon": "^3.1.11"
   }
 }
