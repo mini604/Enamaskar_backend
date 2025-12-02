@@ -4,6 +4,9 @@ const { renderMedia, selectComposition } = require("@remotion/renderer");
 const { bundle } = require("@remotion/bundler");
 
 module.exports = async function renderVideo(data, job) {
+
+  console.log("Rendering video with data:", data);
+
   const remotionEntry = path.join(__dirname, "..", "remotion", "index.jsx");
 
   if (!fs.existsSync(remotionEntry)) {
@@ -12,7 +15,7 @@ module.exports = async function renderVideo(data, job) {
 
   console.log("Bundling project...");
   const bundleLocation = await bundle(remotionEntry);
-
+  console.log("Bundle location:", bundleLocation);
   console.log("Selecting composition...");
   const composition = await selectComposition({
     serveUrl: bundleLocation,
@@ -21,6 +24,9 @@ module.exports = async function renderVideo(data, job) {
   });
 
   const outputFolder = path.join(__dirname, "..", "public", "temp");
+
+  console.log("Output folder:", outputFolder);
+
   if (!fs.existsSync(outputFolder)) fs.mkdirSync(outputFolder, { recursive: true });
 
   const outputPath = path.join(outputFolder, `output_${Date.now()}.mp4`);

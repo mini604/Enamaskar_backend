@@ -14,7 +14,15 @@ export const VideoTemplate = ({ frames = [] }) => {
     (f) => frame >= secToFrame(f.start) && frame < secToFrame(f.end)
   );
 
-  const videoSrc = staticFile("Wed2.mp4");
+  // const videoSrc = staticFile("Wed2.mp4");
+  // const videoSrc = "Wed2.mp4";
+  // const videoSrc = "http://localhost:3000/Wed2.mp4";
+  const videoSrc = "https://res.cloudinary.com/da3rezykp/video/upload/v1764658424/Wed2_jbb1tr.mp4";
+// 
+
+
+
+  console.log("Video source:", videoSrc);
 
   const baseStyle = {
     width: "100%",
